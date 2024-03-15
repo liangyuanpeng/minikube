@@ -801,6 +801,15 @@ var Addons = map[string]*Addon{
 		map[string]string{
 			"Yakd": "docker.io",
 		}),
+	"xline": NewAddon([]*BinAsset{
+		MustBinAsset(addons.XlineAssets, "xline/xline.yaml", vmpath.GuestAddonsDir, "xline.yaml", "0640"),
+	}, false, "xline", "xline", "xline", "xline",
+		map[string]string{
+			"xline": "datenlord/xline:5068a2b",
+		},
+		map[string]string{
+			"xline": "docker.io",
+		}),
 }
 
 // parseMapString creates a map based on `str` which is encoded as <key1>=<value1>,<key2>=<value2>,...

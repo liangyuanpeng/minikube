@@ -174,4 +174,8 @@ var (
 	// YakdAssets assets for yakd addon
 	//go:embed yakd/*.yaml yakd/*.tmpl
 	YakdAssets embed.FS
+
+	// XlineAssets assets for xline addon
+	//go:embed xline/*.yaml
+	XlineAssets embed.FS
 )

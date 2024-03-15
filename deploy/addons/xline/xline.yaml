@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  name: xline
+  namespace: kube-system
+spec:
+  containers:
+    - name: xline
+      image: datenlord/xline:5068a2b
+      imagePullPolicy: IfNotPresent
+      env:
+      - name: RUST_LOG
+        value: debug
+      command:
+        - /bin/sh
+        - -c
+        - xline --name node1 --members node1=0.0.0.0:10379 --data-dir /tmp/xline --storage-engine rocksdb
+    - name: tools
+      image: ghcr.io/liangyuanpeng/ubuntu:tools-v1
+      imagePullPolicy: IfNotPresent
+      command:
+        - /bin/sh
+        - -c
+        - sleep 9999
+  hostNetwork: true
+status: {}
