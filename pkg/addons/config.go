@@ -237,4 +237,9 @@ var Addons = []*Addon{
 		set:       SetBool,
 		callbacks: []setFn{EnableOrDisableAddon},
 	},
+	{
+		name:      "xline",
+		set:       SetBool,
+		callbacks: []setFn{EnableOrDisableAddon},
+	},
 }
